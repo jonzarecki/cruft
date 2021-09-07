@@ -17,7 +17,7 @@ fi
 
 # Iterate the string array using for loop. The quotes ensure iteration
 # over multiple words string. It's important that .coverage ends with an empty last line.
-cp -f ./scripts/.coveragerc_source ./.coveragerc
+cp -f ./.coveragerc ./.coveragerc
 for val in "${XTRA_COV[@]}"; do
    echo "    $val" >> .coveragerc
 done
