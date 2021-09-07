@@ -20,7 +20,7 @@ def check(
     with TemporaryDirectory() as cookiecutter_template_dir:
         repo = utils.cookiecutter.get_cookiecutter_repo(
             cruft_state["template"], Path(cookiecutter_template_dir), checkout,
-            filter="blob:none", no_checkout=True, single_branch=True)
+            filter="blob:none", no_checkout=True)
         last_commit = repo.head.object.hexsha
         if utils.cruft.is_project_updated(repo, cruft_state["commit"], last_commit, strict):
             typer.secho(
