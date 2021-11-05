@@ -10,6 +10,7 @@ declare XTRA_OPT=""
 
 if [[ $OSTYPE =~ ^msys|^WIN ]]; then
     if [[ $* == *--ci* ]]; then
+      shift
       XTRA_OPT="--count 5"
     fi
 else
