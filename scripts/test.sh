@@ -10,11 +10,14 @@ declare XTRA_OPT=""
 
 if [[ $OSTYPE =~ ^msys|^WIN ]]; then
     if [[ $* == *--ci* ]]; then
-      shift
       XTRA_OPT="--count 5"
     fi
 else
     XTRA_COV+=("pragma: no cov_4_nix")
+fi
+
+if [[ $* == *--ci* ]]; then
+  shift
 fi
 
 # Iterate the string array using for loop. The quotes ensure iteration
